@@ -1,0 +1,146 @@
+﻿
+
+
+BODY
+{
+    FONT-SIZE: 10pt;
+    MARGIN: 0px;
+    FONT-FAMILY: Arial;
+}
+A 
+{
+    COLOR: blue;
+    TEXT-DECORATION: underline;
+	font-Size:1;
+}
+Table
+{
+	border-collapse:collapse;
+}
+TD
+{
+	padding-left:4px;
+}
+.SortLinks A
+{
+	COLOR: blue;
+    TEXT-DECORATION: none;	
+}
+.GridViewButton 
+{
+	
+	margin-top:0px;
+	margin-bottom: 1px;
+	padding-bottom: 4px;
+	Margin-right: 4px;
+	PADDING-RIGHT: 3px;
+    PADDING-LEFT: 3px;
+    FONT-SIZE: 8pt;
+    HEIGHT:19px;
+    FONT-FAMILY: Arial;
+}
+
+.GridView TD, TH
+{
+  white-space:nowrap;
+	PADDING-RIGHT: 4px;
+    PADDING-LEFT: 4px;
+    BORDER-TOP: white 1px solid;
+    BORDER-BOTTOM: white 1px solid;
+    border-collapse:collapse;
+}
+.DetailsView TD, TH
+{
+	white-space:nowrap;
+	PADDING-RIGHT: 4px;
+    PADDING-LEFT: 4px;
+    BORDER-TOP: white 1px solid;
+    BORDER-BOTTOM: white 1px solid;
+    border-collapse:collapse;
+}
+.Calendar TD, TH
+{
+  white-space:nowrap;
+	PADDING-RIGHT: 4px;
+    PADDING-LEFT: 4px;
+    BORDER-TOP: white 0px solid;
+    BORDER-BOTTOM: white 0px solid;
+    border-collapse:collapse;
+}
+
+.NormalRow
+{
+	background-color:#e9edea;
+	
+}
+.AltRow
+{
+	background-color:#dadada;
+}
+.NormalRowHighlight
+{
+	background-color:#A0BDE6;
+	
+}
+.AltRowHighlight
+{
+	background-color:#A0BDE6;
+}
+
+
+/*Discount Management*/
+.TopDiv{
+
+font:10pt arial;
+
+display:block;
+clear:both;
+background-image:url('images/bottomshadow.gif');
+background-position:bottom left;
+background-repeat:repeat-x;
+padding-left:10px;
+padding-right:10px;
+padding-bottom:10px;
+padding-top:10px;
+overflow:hidden;
+margin-bottom:0;
+width:95%; margin:auto;
+border-right:solid 2px #c0c0c0;  border-left:solid 2px #c0c0c0;
+
+}
+
+
+.InsertDiv {display:inline;  padding:8px; float:left;}
+#InsertHanger{margin:0px 0 20px 0; width:90%; margin:auto; background:#EBEBEB; border: 1px solid #c0c0c0; border-top:none;  padding:0 0 0 0;}
+.GridHeader{
+ background:#475470;
+ color:#FFF;
+}
+.Grid{
+
+}
+.panelInsert{
+overflow:hidden;
+}
+.GridItem{
+border-top:1px solid #b3c5e1;
+border-bottom:1px solid #b3c5e1;
+}
+.compColumn
+{
+ background:#EFE9D2;
+}
+.regColumn
+{ background:none;
+	}
+	
+.ccOVER:hover
+{ background:#EFE9D2;
+	}	
+.tdlabel
+{ font-weight:bold;
+	}
+.header
+{font-size:14px; color:#475470; font-weight:bold;
+	padding:15px;
+	}	

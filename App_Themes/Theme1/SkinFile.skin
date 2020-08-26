@@ -1,0 +1,255 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+            
+        <asp:Table runat="server"  Style="BORDER-RIGHT: black 1px solid;
+            BORDER-TOP: black 1px solid;
+            FONT-SIZE: 9pt;
+            BORDER-LEFT: black 1px solid;
+            WIDTH: 100%;
+            BORDER-BOTTOM: black 1px solid;
+            FONT-FAMILY: Arial;
+            BORDER-COLLAPSE: collapse;
+            BACKGROUND-COLOR: #dadada;"/>            
+        <asp:TableHeaderRow runat="server" style="FONT-WEIGHT: bold;
+            FONT-SIZE: 10pt;
+            BACKGROUND-COLOR: #99ccff;
+            TEXT-ALIGN: left;" />
+        <asp:TableFooterRow runat="server" style="FONT-WEIGHT: bold;
+            FONT-SIZE: 10pt;
+            BACKGROUND-COLOR: #99ccff;
+            TEXT-ALIGN: left;"/>
+        <asp:TableHeaderCell runat="server" Style="PADDING-RIGHT: 4px;
+            BORDER-TOP: white 1px solid;
+            PADDING-LEFT: 4px;
+            FONT-WEIGHT: bold;
+            FONT-SIZE: 10pt;
+            PADDING-BOTTOM: 1px;
+            PADDING-TOP: 1px;
+            BORDER-BOTTOM: white 1px solid;
+            BACKGROUND-COLOR: #99ccff;"
+            />
+        <asp:TableRow runat="server" style="PADDING-RIGHT: 4px;
+            BORDER-TOP: white 1px solid;
+            PADDING-LEFT: 4px;
+            PADDING-BOTTOM: 1px;
+            PADDING-TOP: 1px;
+            BORDER-BOTTOM: white 1px solid" />
+        <asp:TableCell runat="server" style="PADDING-RIGHT: 4px;
+            BORDER-TOP: white 1px solid;
+            PADDING-LEFT: 4px;
+            PADDING-BOTTOM: 1px;
+            PADDING-TOP: 1px;
+            BORDER-BOTTOM: white 1px solid;"
+            VerticalAlign="Top"/>
+        <asp:HyperLink runat="server" />
+    <asp:Button runat="server" Font-Size="8pt" Font-Names="Arial"  />
+    <asp:GridView runat="server" 
+        PageSize="10" 
+        Style="background-color:#99ccff;border:solid 1px black; font-family:Arial;
+         font-size:9pt;width:100%;border-collapse:collapse;"
+        RowStyle-VerticalAlign="Top"  
+        ShowGridLines="false"
+        GridLines="none"
+        AllowPaging="True"
+        AllowSorting="True"
+        AutoGenerateColumns="False">
+       
+        <FooterStyle BackColor="green" />
+        <SelectedRowStyle BackColor="green" ForeColor="GhostWhite" />
+        <PagerStyle BackColor="white" HorizontalAlign="Center" />
+        <HeaderStyle BackColor="#99ccff" CssClass="SortLinks" Font-Underline="false" Font-Size="10pt" ForeColor="black" Font-Bold="True" HorizontalAlign="Left"  />
+        <RowStyle cssClass="NormalRow" />
+        <AlternatingRowStyle  cssClass="AltRow" />
+        <PagerSettings PageButtonCount="9" Position="TopAndBottom" Mode="NumericFirstLast" />
+        <PagerStyle HorizontalAlign="Left" />
+        <EmptyDataRowStyle Font-Bold="true" BackColor="#99ccff" />
+    </asp:GridView>
+
+    <asp:DetailsView 
+        CssClass="DetailsView" 
+        AutoGenerateRows="False"
+        BorderColor="Black" 
+        BorderStyle="solid" 
+        BorderWidth="1px" 
+        runat="server" 
+        Width="100%" 
+        GridLines="None">
+        <CommandRowStyle 
+            BackColor="white" 
+            foreColor="blue" />
+        <FooterStyle 
+            BackColor="green" 
+            ForeColor="Black" />
+        <EditRowStyle 
+            BackColor="#dadada" 
+            Font-Bold="True" 
+            ForeColor="black" />
+        <RowStyle 
+            BackColor="#dadada" 
+            ForeColor="Black" />
+        <PagerStyle 
+            BackColor="green" 
+            ForeColor="Black" 
+            HorizontalAlign="Center" />
+        <HeaderStyle 
+            BackColor="#99ccff" 
+            Font-Size="10pt" 
+            ForeColor="black"
+            Font-Bold="True" 
+            HorizontalAlign="Left"
+         />
+        <AlternatingRowStyle BackColor="#dadada" />
+    </asp:DetailsView>
+            
+         <asp:Table runat="server" SkinID="TitleBar" 
+            style="BORDER-RIGHT: 0px;
+            BORDER-TOP: 0px;
+            MARGIN: 0px;
+            BORDER-LEFT: 0px;
+            WIDTH: 100%;
+            BORDER-BOTTOM: 0px;
+            HEIGHT: 20px;
+            FONT-FAMILY:Arial;
+            FONT-SIZE:9pt;
+            BORDER-COLLAPSE: collapse;"
+           />
+        <asp:TableRow runat="server" Height="20px" SkinID="TitleBar" />
+        <asp:TableCell runat="server" height="19px" SkinID="TitleBar" style="
+            BORDER-RIGHT: 0px;
+            PADDING-RIGHT: 4px;
+            BORDER-TOP: 0px;
+            PADDING-LEFT: 4px;
+            FONT-WEIGHT: bold;
+            FONT-SIZE: 11pt;
+            PADDING-BOTTOM: 1px;
+            BORDER-LEFT: 0px;
+            COLOR: white;
+            PADDING-TOP: 1px;
+            BORDER-BOTTOM: 0px;
+            FONT-FAMILY: Arial;
+            BACKGROUND-COLOR: #336699;"/>
+            
+             <asp:Label runat="server" />
+             <asp:Label ForeColor="red" SkinID="ErrorLabel" runat="server" />
+        <asp:Image runat="server" align="absMiddle" />
+       <asp:HyperLink runat="server" SkinID="TitleBar" style="COLOR:white;TEXT-DECORATION: none"/>
+ 
+    
+    <asp:Table runat="server" SkinId="GreyGridviewHeader" Style="BORDER-RIGHT: black 1px solid;
+            BORDER-TOP: black 1px solid;
+            FONT-SIZE: 9pt;
+            BORDER-LEFT: black 1px solid;
+            WIDTH: 100%;
+            FONT-FAMILY: Arial;
+            BORDER-COLLAPSE: collapse;
+            BACKGROUND-COLOR: #dadada;"/>            
+        
+     <asp:GridView runat="server" skinID="GreyColumnHeaders"
+        RowStyle-VerticalAlign="Top"  
+        PageSize="10" 
+        Style="background-color:#99ccff;
+            border-left:solid 1px black;
+            border-right:solid 1px black;
+            border-bottom:solid 1px black;
+            border-top:0px;
+            font-family:Arial;
+            font-size:9pt;
+            width:100%;
+            border-collapse:collapse;"
+        ShowGridLines="false"
+        GridLines="none"
+        AllowPaging="True"
+        AllowSorting="True"
+        AutoGenerateColumns="False">
+       
+        <FooterStyle BackColor="green" />
+        <SelectedRowStyle BackColor="green" ForeColor="GhostWhite" />
+        <PagerStyle BackColor="white" HorizontalAlign="Center" />
+        <HeaderStyle BackColor="#dadada" CssClass="SortLinks" Font-Underline="false" Font-Size="10pt" ForeColor="black" Font-Bold="True" HorizontalAlign="Left"  />
+        <RowStyle cssClass="NormalRow" />
+        <AlternatingRowStyle cssClass="AltRow" />
+        <PagerSettings PageButtonCount="9" Position="TopAndBottom" Mode="NumericFirstLast" />
+        <PagerStyle HorizontalAlign="Left" />
+        <EmptyDataRowStyle Font-Bold="true" BackColor="#dadada" />
+    </asp:GridView>
+
+
+     <asp:GridView runat="server" skinID="GreyColumnHeaders_A"
+        RowStyle-VerticalAlign="Top"  
+        PageSize="30" 
+        Style="background-color:#99ccff;
+            border-left:solid 1px black;
+            border-right:solid 1px black;
+            border-bottom:solid 1px black;
+            border-top:0px;
+            font-family:Arial;
+            font-size:9pt;
+            width:100%;
+            border-collapse:collapse;"
+        ShowGridLines="false"
+        GridLines="none"
+        AllowPaging="True"
+        AllowSorting="True"
+        AutoGenerateColumns="False">
+       
+        <FooterStyle BackColor="green" />
+        <SelectedRowStyle BackColor="green" ForeColor="GhostWhite" />
+        <PagerStyle BackColor="white" HorizontalAlign="Center" />
+        <HeaderStyle BackColor="#dadada" CssClass="SortLinks" Font-Underline="false" Font-Size="10pt" ForeColor="black" Font-Bold="True" HorizontalAlign="Left"  />
+        <RowStyle cssClass="NormalRow" />
+        <AlternatingRowStyle cssClass="AltRow" />
+        <PagerSettings PageButtonCount="9" Position="TopAndBottom" Mode="NumericFirstLast" />
+        <PagerStyle HorizontalAlign="Left" />
+        <EmptyDataRowStyle Font-Bold="true" BackColor="#dadada" />
+    </asp:GridView>
+
+
+
+    <asp:Calendar runat="server" 
+        BackColor="#e9edea" 
+        BorderColor="#FFFFFF" 
+        CellPadding="1" 
+        DayNameFormat="Shortest" 
+        Font-Names="Arial" 
+        Font-Size="8pt" 
+        ForeColor="#000000" 
+        Width="160px" 
+        >
+        <SelectedDayStyle 
+            BackColor="#666666" 
+            Font-Bold="True" 
+            ForeColor="White" 
+            />
+        <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+        <SelectorStyle BackColor="#CCCCCC" />
+        <WeekendDayStyle BackColor="#dadada" />
+        <OtherMonthDayStyle ForeColor="#888888" />
+        <NextPrevStyle VerticalAlign="Bottom" />
+        <DayHeaderStyle cssClass="Calendar"
+            BackColor="#dadada" 
+            Font-Bold="True" 
+            Font-Size="7pt" 
+            />
+        <TitleStyle 
+            BackColor="#99ccff" 
+            Font-Size="7pt" 
+            BorderColor="Black" 
+            Font-Bold="True" 
+            />
+    </asp:Calendar>
+ <asp:Textbox runat="server" skinID="SearchableInput" style="text-decoration:underline; color:blue;"  />
+ 

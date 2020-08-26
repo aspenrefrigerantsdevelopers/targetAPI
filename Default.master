@@ -1,0 +1,69 @@
+<%@ master language="VB" inherits="_DefaultMaster, App_Web_zziy_4g2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Untitled Page</title>
+    <script   src="../js/rounded_corners.inc.js" type="text/javascript"></script>
+<script   src="../js/prototype.js" type="text/javascript"></script>
+<script   src="../js/effects.js" type="text/javascript"></script>
+
+
+<style type="text/css"> 
+    .r_Align 
+    { 
+    text-align:right;
+     } 
+
+    .c_Align 
+    { 
+    text-align:center;
+     } 
+</style> 
+
+<style type="text/css"  media="print">
+
+
+	.DoNotPrint
+	{
+	    DISPLAY: none;
+	    VISIBILITY: hidden;
+	}
+	.DoPrint
+	{
+	    DISPLAY: inline;
+	    VISIBILITY:visible;
+	}
+    
+</style>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <asp:Table runat="server" ID="TitleBarTable" SkinID="TitleBar">
+        <asp:TableRow  SkinID="TitleBar">
+            <asp:TableCell SkinID="TitleBar"  Width="100%" Wrap="false"><%=TitleBar%></asp:TableCell>
+            <asp:TableCell  SkinID="TitleBar" Wrap="false" HorizontalAlign="Right">
+                <asp:HyperLink runat="server"  CssClass="DoNotPrint" SkinID="TitleBar" id="LinkShowHide" ToolTip="Click here to expand this inner page to fill the entire browser window or frame it back into the website.">
+                    <asp:Image ID="Image1" runat="server" ImageUrl="/shared/images/icons/full_screen.gif" /> <small>Hide/Show Buttons</small>
+                </asp:HyperLink>
+            </asp:TableCell>
+            <asp:TableCell ID="TableCell1" runat="server" SkinID="TitleBar" wrap="false" HorizontalAlign="Right">
+                <asp:HyperLink runat="Server"  id="LinkSync" CssClass="DoNotPrint" NavigateUrl="" SkinID="TitleBar"  ToolTip="Click here to sync the URL of this page so that it can be bookmarked or saved as a shortcut.">
+                    <asp:Image ID="Image2" runat="Server" ImageUrl="/shared/images/icons/sync_bw.gif" /> <small>Sync URL</small>
+                </asp:HyperLink>
+            </asp:TableCell>
+            <asp:TableCell ID="TableCell2" runat="server" SkinID="TitleBar" Wrap="false" HorizontalAlign="Right">
+                <asp:HyperLink runat="Server" ID="LinkPrint" CssClass="DoNotPrint" NavigateUrl="JavaScript:window.print()" SkinID="TitleBar" ToolTip="Click here to print this screen.">
+                    <asp:Image ID="Image3" runat="server" ImageURL="/shared/images/icons/print_bw_icon.gif"/> <small>Print</small></asp:HyperLink>&nbsp;
+            </asp:TableCell>
+         </asp:TableRow>
+      </asp:Table>
+
+    <div style="margin-left:1%;margin-right:1%">
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+        </asp:contentplaceholder>
+    </div>
+    </form>
+</body>
+</html>
