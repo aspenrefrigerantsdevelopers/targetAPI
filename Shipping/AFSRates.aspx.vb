@@ -109,6 +109,27 @@ Public Partial Class LTLRateSample
 
             tShipDateAdv.Text = dtShipDate.Now.ToShortDateString()
 
+            Select Case DatePart("w", Now)
+                Case 1 'Sunday
+                    tShipDateAdv.Text = DateAdd("d", 1, Now).ToShortDateString()
+                Case 2 To 5 'Monday to Thursday
+                    Select Case DatePart("h", Now) >= 13 'After 1pm
+                        Case True 'Next Day
+                            tShipDateAdv.Text = DateAdd("d", 1, Now).ToShortDateString()
+                        Case Else 'Today 
+                            tShipDateAdv.Text = Now.ToShortDateString()
+                    End Select
+                Case 6 'Friday
+                    Select Case DatePart("h", Now) >= 13 'After 1pm
+                        Case True 'Following Monday
+                            tShipDateAdv.Text = DateAdd("d", 3, Now).ToShortDateString()
+                        Case Else 'Today
+                            tShipDateAdv.Text = Now.ToShortDateString()
+                    End Select
+                Case 7 'Saturday
+                    tShipDateAdv.Text = DateAdd("d", 2, Now).ToShortDateString()
+            End Select
+
             'Trace.Warn(Weekday(dtShipDate.Now).ToString)
             'Trace.Warn(Weekday(#9/11/2011#).ToString)
 
@@ -674,6 +695,7 @@ Public Partial Class LTLRateSample
         cmd.Parameters.AddWithValue("@CarrierChoice", 0)
         cmd.Parameters.AddWithValue("@CarrierPhone", DBNull.Value)
         cmd.Parameters.AddWithValue("@DeliveryDate", DBNull.Value)
+        cmd.Parameters.AddWithValue("@QueryID", 0)
 
         cmd.CommandText = strSQL
         cmd.ExecuteNonQuery()
