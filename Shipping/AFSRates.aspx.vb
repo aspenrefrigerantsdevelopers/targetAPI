@@ -61,10 +61,10 @@ Public Partial Class LTLRateSample
 
         If Not IsPostBack Then
 
-            Trace.Warn("http://intranet.refron.com/apps/order/reserve_target.asp?" + Request.QueryString.ToString() + "")
+            Trace.Warn("http://intranet.refron.com/apps/order/reserve_afs.asp?" + Request.QueryString.ToString() + "")
 
             If Request.UrlReferrer Is Nothing Then
-                strPageReferrerUrl = "http://intranet.refron.com/apps/order/reserve_target.asp?" + Request.QueryString.ToString() + ""
+                strPageReferrerUrl = "http://intranet.refron.com/apps/order/reserve_afs.asp?" + Request.QueryString.ToString() + ""
             Else
                 strPageReferrerUrl = Request.UrlReferrer.ToString()
             End If
@@ -335,6 +335,7 @@ Public Partial Class LTLRateSample
             'ds.ReadXml(New System.IO.MemoryStream(System.Text.ASCIIEncoding.[Default].GetBytes(rateQuoteResponse)))
 
             ds.Tables.Add(TargetAPI_Carriers)
+            Dim estimatedCost As String
 
             For Each dt As System.Data.DataTable In ds.Tables
 
@@ -405,20 +406,22 @@ Public Partial Class LTLRateSample
                         Dim cmd As New SqlCommand(strSQL, m_conn.Connection)
 
                         cmd.CommandType = CommandType.StoredProcedure
+                        estimatedCost = dr.Item("EstimateCost").ToString().Replace(",", "")
 
                         cmd.Parameters.AddWithValue("@OrderID", CType(Request.QueryString("orderid"), Integer))
                         cmd.Parameters.AddWithValue("@CarrierID", dr.Item("CarrierID"))
                         cmd.Parameters.AddWithValue("@CarrierName", dr.Item("CarrierName").ToString)
                         cmd.Parameters.AddWithValue("@Distance", dr.Item("Distance"))
-                        cmd.Parameters.AddWithValue("@AccessorialCosts", dr.Item("AccessorialCosts"))
-                        cmd.Parameters.AddWithValue("@EstimateCost", dr.Item("EstimateCost"))
-                        cmd.Parameters.AddWithValue("@FreightCost", dr.Item("FreightCost"))
-                        cmd.Parameters.AddWithValue("@FuelSurcharge", dr.Item("FuelSurcharge"))
+                        cmd.Parameters.AddWithValue("@AccessorialCosts", dr.Item("AccessorialCosts").ToString().Replace(",", ""))
+                        'cmd.Parameters.AddWithValue("@EstimateCost", dr.Item("EstimateCost"))
+                        cmd.Parameters.AddWithValue("@EstimateCost", estimatedCost)
+                        cmd.Parameters.AddWithValue("@FreightCost", dr.Item("FreightCost").ToString().Replace(",", ""))
+                        cmd.Parameters.AddWithValue("@FuelSurcharge", dr.Item("FuelSurcharge").ToString().Replace(",", ""))
                         cmd.Parameters.AddWithValue("@ServiceDays", dr.Item("ServiceDays"))
                         cmd.Parameters.AddWithValue("@ServiceType", dr.Item("ServiceType"))
                         cmd.Parameters.AddWithValue("@ShipmentDate", Convert.ToDateTime(tShipDateAdv.Text))
                         cmd.Parameters.AddWithValue("@ShipmentMethod", dr.Item("ShipmentMethod"))
-                        cmd.Parameters.AddWithValue("@TrueCost", dr.Item("TrueCost"))
+                        cmd.Parameters.AddWithValue("@TrueCost", dr.Item("TrueCost").ToString().Replace(",", ""))
                         cmd.Parameters.AddWithValue("@CarrierChoice", False)
                         cmd.Parameters.AddWithValue("@CarrierPhone", DBNull.Value)
                         cmd.Parameters.AddWithValue("@DeliveryDate", dtDeliveryDate)
